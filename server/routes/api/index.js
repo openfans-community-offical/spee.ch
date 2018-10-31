@@ -23,6 +23,7 @@ const publishingConfig = require('../../controllers/api/config/site/publishing')
 const getTorList = require('../../controllers/api/tor');
 const getBlockedList = require('../../controllers/api/blocked');
 const getOEmbedData = require('../../controllers/api/oEmbed');
+const existingChannelAccount = require('../../controllers/api/user/existingChannel');
 
 module.exports = {
   // homepage routes
@@ -52,6 +53,7 @@ module.exports = {
   '/api/file/availability/:name/:claimId': { controller: [ torCheckMiddleware, fileAvailability ] },
   // user routes
   '/api/user/password/': { method: 'put', controller: [ torCheckMiddleware, userPassword ] },
+  '/api/user/existing': { controller: [ torCheckMiddleware, existingChannelAccount] },
   // configs
   '/api/config/site/publishing': { controller: [ torCheckMiddleware, publishingConfig ] },
   // tor

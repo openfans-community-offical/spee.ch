@@ -10,5 +10,5 @@ module.exports = {
   '/login': { method: 'post', controller: handleLoginRequest },
   '/logout': { controller: handleLogoutRequest },
   '/user': { controller: handleUserRequest },
-  '/existing-channel-signup': { controller: [ speechPassport.authenticate('existing-channel-signup'), handleExistingSignup ] },
+  // '/existing-channel-signup': { controller: [ speechPassport.authenticate('existing-channel-signup'), handleExistingSignup ] },
 };
