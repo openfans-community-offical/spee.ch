@@ -53,7 +53,7 @@ module.exports = {
   '/api/file/availability/:name/:claimId': { controller: [ torCheckMiddleware, fileAvailability ] },
   // user routes
   '/api/user/password/': { method: 'put', controller: [ torCheckMiddleware, userPassword ] },
-  '/api/user/existing': { controller: [ torCheckMiddleware, existingChannelAccount] },
+  '/api/user/existing': { method: 'post', controller: [ torCheckMiddleware, existingChannelAccount] },
   // configs
   '/api/config/site/publishing': { controller: [ torCheckMiddleware, publishingConfig ] },
   // tor
